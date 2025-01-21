@@ -406,3 +406,36 @@ form button:hover {
 .free-consultation:hover ~ .bottom-box {
     transform: translateY(15px);
 }
+
+/* Медиа-запросы для мобильных */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    .nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .carousel-images {
+        flex-direction: row;
+        overflow-x: auto;
+    }
+
+    .text-box {
+        max-width: 90%; /* Делаем текст гибким */
+        font-size: 1rem;
+        margin: 0 auto;
+    }
+
+    .diplomas {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .diploma-container {
+        width: 150px; /* Уменьшаем для мобильных */
+        height: auto;
+    }
+}
