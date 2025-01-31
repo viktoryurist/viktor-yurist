@@ -391,6 +391,13 @@ footer {
 /* Адаптивность для телефонов */
 @media (max-width: 768px) {
 
+
+
+    .free-consultation:hover {
+        transform: scale(1.0);
+    }
+
+
     .cases .text-box:nth-child(odd) {
         max-width: 80%;
     }
@@ -401,6 +408,7 @@ footer {
 
     .glavimg img {
         width: 380px;
+        max-width: 90vw;
     }
 
     header {
