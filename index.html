@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header class="header">
         <div class="container">
@@ -45,11 +46,14 @@
 
         <section id="about" class="about">
             <div class="container">
-                
+                <br><br><br><br><br><br><br>
                 <h2>Обо мне</h2>
                 
-                <div style="display: flex; align-items: center; gap: 20px;">
-                    <img src="1.jpg" alt="Фото Усова Виктора" style="width: 450px; height: auto; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                <div class="obomne">
+                    <div class="glavimg">
+                        <img src="1.jpg">
+                    </div>
+                    
                     <div class="highlight-box">
                         Меня зовут Виктор Усов. Я юрист с опытом работы <b>более 20 лет</b>.  Имею 2 высших (оба юридические) 
                         образования, обладаю очень существенным портфолио (прохождение различных курсов, форумов, семинаров, 
@@ -70,7 +74,7 @@
 
         <section id="services" class="services" style = "font-weight: bold;">
             <div class="container">
-                <br><br><br><br><br>
+                <br><br><br><br><br><br>
                 <h2>Мои услуги</h2>
 
                 <div class="highlight-box">
@@ -125,7 +129,7 @@
 
         <section id="cases" class="cases">
             <div class="container">
-                <br><br><br><br><br>
+                <br><br><br><br><br><br>
                 <h2>Кейсы</h2>
                 <div class="highlight-box">
                     <p>Стаж более 20 лет. Это будет не скромно с моей стороны, но… 
@@ -206,6 +210,7 @@
         <br><br>
 
         <section id="socials" class="socials">
+            
             <div class="container">
                 <h2>Я в соцсетях</h2>
                 <div class="socials">
@@ -215,6 +220,7 @@
                 </div>
                 <h3>Телефон: <a href="tel:+79131745819">+7 913 174 5819</a></h3>
             </div>
+            
         </section>
     </main>
 
@@ -305,6 +311,8 @@
             currentIndex = (currentIndex === totalImages - 1) ? 0 : currentIndex + 1;
             carouselImages.style.transform = `translateX(-${currentIndex * 100}%)`;
         });
+
+        
     </script>
 </body>
 </html>
