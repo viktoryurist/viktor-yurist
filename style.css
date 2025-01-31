@@ -1,1 +1,474 @@
+html, body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100vw;
+    overflow-x: hidden; /* Убираем горизонтальный скролл */
+}
 
+body {
+    font-family: 'Raleway', sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+
+}
+
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.glavimg img {
+    width: 450px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    width: 100vw; 
+    margin: 0;
+    padding: 5px;
+    position: fixed;
+    z-index: 900; 
+    background-color: #282828;
+    color: white;
+    text-align: center;
+    box-sizing: border-box; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+header p {
+    margin: 5px 0 0;
+}
+
+.header-contact a {
+    color: #0073e6;
+    text-decoration: none;
+    margin-right: 15px;
+}
+
+.nav {
+    width: 100vw;
+    transition: top 0.3s ease-in-out;
+    position: fixed; 
+    top: 125px; 
+    background-color: #333;
+    color: white;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Добавляем лёгкую тень */
+}
+
+.nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.nav ul li {
+    margin: 0 15px;
+}
+
+.nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    transition: color 0.3s ease;
+}
+
+.nav ul li a:hover {
+    color: #FFD700; /* Жёлтый цвет при наведении */
+}
+
+
+.nav ul li a.active {
+    color: #ffd700;
+    border-bottom: 2px solid #ffd700;
+}
+
+section {
+    padding: 40px 0;
+}
+
+section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+
+}
+
+section h3 {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+section.visible h3 {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+section.visible h2 {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+footer {
+    background-color: #282828;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.highlight-box {
+    background-color: #e3e3e3;
+    color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 800px;
+    font-size: 1.2rem;
+
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+
+.highlight-box:hover {
+    transform: translateY(-10px);
+}
+
+.services img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.text-box {
+    background-color: #f4f4f4;
+    padding: 15px;
+    border-left: 4px solid #0073e6;
+    margin: 20px 0;
+    border-radius: 8px;
+    transition: box-shadow 0.3s ease;
+}
+
+.text-box:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-images {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-images img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.carousel img {
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.carousel-buttons {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.carousel-buttons button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-buttons button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.testimonials {
+    padding: 40px 20px;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.testimonial {
+    font-style: italic;
+    margin: 20px 0;
+    transition: transform 0.3s ease;
+}
+
+.testimonial:hover {
+    transform: scale(1.05);
+}
+
+.testimonial span {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #0073e6;
+}
+
+.socials {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.socials a {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 1rem;
+    color: #333;
+    border: 1px solid #ccc;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.socials a:hover {
+    background-color: #0073e6;
+    color: white;
+    transform: translateY(-3px);
+}
+
+.diplomas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.diploma-container {
+    width: 300px;
+    height: 400px;
+    display: inline-block;
+    margin: 10px;
+    overflow: hidden;
+}
+.diploma-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.cases {
+    background-color: #f9f9f9;
+    padding: 40px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+}
+
+.cases h2 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.cases .text-box {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+
+.cases .text-box:hover {
+    transform: translateY(-10px);
+}
+
+.cases .text-box:nth-child(odd) {
+    margin-left: 0;
+    margin-right: auto;
+    max-width: 60%;
+}
+
+.cases .text-box:nth-child(even) {
+    margin-left: auto;
+    margin-right: 0;
+    max-width: 60%;
+}
+
+.cases .text-box p {
+    margin: 0;
+}
+
+
+.pricing-section {
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    position: relative;
+}
+
+.free-consultation {
+    font-size: 12em; 
+    font-weight: bold;
+    color: #f8f8f8; 
+    -webkit-text-stroke: 5px black; 
+    text-stroke: 5px black; 
+    margin: 20px 0; 
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease, margin 0.3s ease;
+}
+
+.top-box, .bottom-box {
+    transition: transform 0.3s ease, margin 0.3s ease;
+}
+
+.free-consultation:hover {
+    transform: scale(1.1);
+}
+
+.free-consultation:hover ~ .top-box {
+    transform: translateY(-15px);
+}
+
+.free-consultation:hover ~ .bottom-box {
+    transform: translateY(15px);
+}
+
+@media (min-width: 1024px) {
+    .obomne {
+        display: flex;
+    }
+}
+
+/* Адаптивность для телефонов */
+@media (max-width: 768px) {
+
+
+
+    .free-consultation:hover {
+        transform: scale(1.0);
+    }
+
+
+    .cases .text-box:nth-child(odd) {
+        max-width: 80%;
+    }
+
+    .top-box, .bottom-box {
+        width: 90vw;
+    }
+
+    .glavimg img {
+        width: 380px;
+        max-width: 90vw;
+    }
+
+    header {
+        top: 125px;
+        position: relative;
+    }
+
+    .nav {
+        position: fixed;
+        font-size: 16px; 
+        top: 0; /* Фиксируем сверху */
+        left: 0;
+        width: 100%;
+        overflow: hidden; /* Скрываем выходящий контент */
+        z-index: 1000; /* Делаем поверх других элементов */
+        background: #333; /* Добавляем фон, чтобы не сливалось */
+        padding: 10px 0;
+    }
+
+    
+
+    /* Чтобы контент не перекрывался навигацией */
+    .content {
+        margin-top: 50px; /* Отступ, равный высоте навигации */
+    }
+
+    .nav ul {
+        display: flex;
+        flex-wrap: wrap; /* Позволяем переносить элементы */
+        justify-content: center; /* Центрируем элементы */
+        padding: 0;
+        margin: 0;
+    }
+
+    .nav li {
+        list-style: none;
+        margin: 5px; /* Отступы между элементами */
+    }
+
+    .nav a {
+        font-size: 14px;
+        padding: 8px 10px;
+        display: block;
+        white-space: nowrap; /* Предотвращаем перенос текста */
+    }
+    /* Уменьшение шрифта в highlight-боксах */
+    .highlight-box {
+        padding: 10px; /* Уменьшение отступов */
+    }
+
+    /* Уменьшение шрифта для всего текста */
+    body, p, h1, h2, h3, h4, h5, h6 {
+        font-size: 90%; /* Уменьшение размера шрифта на 10% */
+    }
+
+    .cases h2 {
+        font-size: 14px;
+    }
+
+    .free-consultation {
+        font-size: 60px; 
+        -webkit-text-stroke: 2.5px black; 
+    }
+}
