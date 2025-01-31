@@ -1,41 +1,47 @@
-body {
-    font-family: 'Raleway', sans-serif;
+html, body {
+    overflow-x: hidden;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    width: 100vw;
+    overflow-x: hidden; /* Убираем горизонтальный скролл */
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
     background-color: #f8f8f8;
     color: #333;
+
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 100%;
     margin: 0 auto;
     padding: 20px;
 }
 
+.glavimg img {
+    width: 450px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
 header {
+    width: 100vw; 
+    margin: 0;
+    padding: 5px;
+    position: fixed;
+    z-index: 900; 
     background-color: #282828;
     color: white;
-    padding: 10px 0;
     text-align: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    box-sizing: border-box; 
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-@keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 header h1 {
-    margin: 0px;
+    margin: 0;
     font-size: 2rem;
 }
 
@@ -50,17 +56,20 @@ header p {
 }
 
 .nav {
+    width: 100vw;
+    transition: top 0.3s ease-in-out;
+    position: fixed; 
+    top: 125px; 
     background-color: #333;
     color: white;
-    position: sticky;
-    top: 115px;
     z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Добавляем лёгкую тень */
 }
 
 .nav ul {
     list-style: none;
-    padding: 0;
     margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
 }
@@ -72,12 +81,14 @@ header p {
 .nav ul li a {
     color: white;
     text-decoration: none;
+    padding: 10px;
     transition: color 0.3s ease;
 }
 
 .nav ul li a:hover {
-    color: #ffd700;
+    color: #FFD700; /* Жёлтый цвет при наведении */
 }
+
 
 .nav ul li a.active {
     color: #ffd700;
@@ -124,42 +135,6 @@ footer {
     text-align: center;
 }
 
-form {
-    max-width: 500px;
-    margin: 20px auto;
-    text-align: left;
-}
-
-form label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-form input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-form button {
-    background-color: #282828;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-form button:hover {
-    background-color: #333;
-    transform: scale(1.05);
-}
-
-
 .highlight-box {
     background-color: #e3e3e3;
     color: #333;
@@ -203,7 +178,7 @@ form button:hover {
     position: relative;
     width: 100%;
     max-width: 800px;
-    margin: 30px auto;
+    margin: 0 auto;
     overflow: hidden;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -332,7 +307,7 @@ form button:hover {
 
 .cases h2 {
     font-family: 'Raleway', sans-serif;
-    font-size: 28px;
+    font-size: 24px;
     color: #333;
     text-align: center;
     margin-bottom: 20px;
@@ -407,35 +382,86 @@ form button:hover {
     transform: translateY(15px);
 }
 
-/* Медиа-запросы для мобильных */
+@media (min-width: 1024px) {
+    .obomne {
+        display: flex;
+    }
+}
+
+/* Адаптивность для телефонов */
 @media (max-width: 768px) {
-    .container {
-        padding: 10px;
+
+    .cases .text-box:nth-child(odd) {
+        max-width: 80%;
+    }
+
+    .top-box, .bottom-box {
+        width: 90vw;
+    }
+
+    .glavimg img {
+        width: 380px;
+    }
+
+    header {
+        top: 125px;
+        position: relative;
+    }
+
+    .nav {
+        position: fixed;
+        font-size: 16px; 
+        top: 0; /* Фиксируем сверху */
+        left: 0;
+        width: 100%;
+        overflow: hidden; /* Скрываем выходящий контент */
+        z-index: 1000; /* Делаем поверх других элементов */
+        background: #333; /* Добавляем фон, чтобы не сливалось */
+        padding: 10px 0;
+    }
+
+    
+
+    /* Чтобы контент не перекрывался навигацией */
+    .content {
+        margin-top: 50px; /* Отступ, равный высоте навигации */
     }
 
     .nav ul {
-        flex-direction: column;
-        gap: 10px;
+        display: flex;
+        flex-wrap: wrap; /* Позволяем переносить элементы */
+        justify-content: center; /* Центрируем элементы */
+        padding: 0;
+        margin: 0;
     }
 
-    .carousel-images {
-        flex-direction: row;
-        overflow-x: auto;
+    .nav li {
+        list-style: none;
+        margin: 5px; /* Отступы между элементами */
     }
 
-    .text-box {
-        max-width: 90%; /* Делаем текст гибким */
-        font-size: 1rem;
-        margin: 0 auto;
+    .nav a {
+        font-size: 14px;
+        padding: 8px 10px;
+        display: block;
+        white-space: nowrap; /* Предотвращаем перенос текста */
+    }
+    /* Уменьшение шрифта в highlight-боксах */
+    .highlight-box {
+        padding: 10px; /* Уменьшение отступов */
     }
 
-    .diplomas {
-        flex-wrap: wrap;
-        gap: 15px;
+    /* Уменьшение шрифта для всего текста */
+    body, p, h1, h2, h3, h4, h5, h6 {
+        font-size: 90%; /* Уменьшение размера шрифта на 10% */
     }
 
-    .diploma-container {
-        width: 150px; /* Уменьшаем для мобильных */
-        height: auto;
+    .cases h2 {
+        font-size: 14px;
+    }
+
+    .free-consultation {
+        font-size: 60px; 
+        -webkit-text-stroke: 2.5px black; 
     }
 }
